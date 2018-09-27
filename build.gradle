@@ -1,0 +1,27 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+mainClassName = 'se.solrike.MySpringApplication'
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    dependencies {
+        imports {
+          mavenBom 'io.spring.platform:platform-bom:Cairo-SR3'
+        }
+    }
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-jersey')
+}
