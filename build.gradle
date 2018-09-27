@@ -15,6 +15,7 @@ repositories {
 
 dependencyManagement {
     dependencies {
+        dependency 'io.swagger:swagger-jersey2-jaxrs:1.5.3'
         imports {
           mavenBom 'io.spring.platform:platform-bom:Cairo-SR3'
         }
@@ -23,5 +24,15 @@ dependencyManagement {
 
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-jersey')
+    
+    compile 'io.swagger:swagger-jersey2-jaxrs'
+    compile 'commons-codec:commons-codec'
+    compile 'org.glassfish.jersey.media:jersey-media-multipart'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-jersey'
+    //compile 'org.springframework.security:spring-security-config'
+    //compile 'org.springframework.security:spring-security-web'
+     
+    
 }
